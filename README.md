@@ -6,7 +6,7 @@ For supporting loading from the web, start a web server where the files uner the
 
 E.g. starting a local server:
 
-  $ (cd web && python -m RangeHTTPServer)
+  $ (cd sounds && python -m RangeHTTPServer)
 
 You can of course also change the url in main.script, to somethin of your choosing (defaults to http://localhost:8000)
 

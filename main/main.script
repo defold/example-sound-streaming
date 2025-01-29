@@ -1,10 +1,5 @@
 
 -- TODO: Find an online server with good content!
--- local URL = "https://onlinetestcase.com/wp-content/uploads/2023/06"
--- local URL = "https://github.com/JCash/defold-sound-stream/raw/refs/heads/main/web"
--- local web_sounds = {}
--- web_sounds["Ogg"] = "100-KB-OGG.ogg"
--- web_sounds["Wav"] = "100-KB-WAV.wav"
 
 local URL = "http://localhost:8000"
 local web_sounds = {}
@@ -49,6 +44,8 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("proxy_loaded") then
 		msg.post(sender, "init")
 		msg.post(sender, "enable")
+
+		self.loaded = true
 
 		local start_message = {}
 		start_message.source = self.source
