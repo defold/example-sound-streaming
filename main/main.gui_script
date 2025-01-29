@@ -1,0 +1,49 @@
+local dirtylarry = require "dirtylarry/dirtylarry"
+
+function init(self)
+	self.selected_origin = 'Archive'
+	self.selected_type = 'Ogg'
+end
+
+function final(self)
+	
+end
+
+function update(self, dt)
+	--local left, right = sound.get_rms("master", 0.1)
+	local left, right = sound.get_peak("master", 0.1)
+	local sl = gui.get_node("speaker_left")
+	local sr = gui.get_node("speaker_right")
+	local scl = 0.75 + left
+	local scr = 0.75 + right
+	gui.set_scale(sl, vmath.vector4(-scl, scl, scl, 1))
+	gui.set_scale(sr, vmath.vector4(scr, scr, scr, 1))
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	self.selected_origin = dirtylarry:radio("origin_web", action_id, action, "Web", self.selected_origin)
+	self.selected_origin = dirtylarry:radio("origin_archive", action_id, action, "Archive", self.selected_origin)
+
+	self.selected_type = dirtylarry:radio("type_ogg", action_id, action, "Ogg", self.selected_type)
+	self.selected_type = dirtylarry:radio("type_wav", action_id, action, "Wav", self.selected_type)
+
+	dirtylarry:button("bn_play", action_id, action, function ()
+		msg.post("main:/controller#script", "play", { origin = self.selected_origin, type = self.selected_type })
+	end)
+
+	dirtylarry:button("bn_stop", action_id, action, function ()
+		msg.post("main:/controller#script", "stop")
+	end)
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

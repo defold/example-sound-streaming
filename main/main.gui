@@ -1,0 +1,290 @@
+script: "/main/main.gui_script"
+fonts {
+  name: "larryfont"
+  font: "/dirtylarry/larryfont.font"
+}
+textures {
+  name: "main"
+  texture: "/main/main.atlas"
+}
+nodes {
+  position {
+    x: 69.0
+    y: 64.0
+  }
+  scale {
+    x: 0.4
+    y: 0.4
+  }
+  type: TYPE_BOX
+  texture: "main/logo"
+  id: "logo"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 632.0
+    y: 231.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "speakers"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: -256.0
+  }
+  scale {
+    x: -1.0
+  }
+  type: TYPE_BOX
+  texture: "main/speaker-icon-61"
+  id: "speaker_left"
+  parent: "speakers"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 256.0
+  }
+  type: TYPE_BOX
+  texture: "main/speaker-icon-61"
+  id: "speaker_right"
+  parent: "speakers"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 396.0
+    y: 600.0
+  }
+  scale {
+    x: 0.7
+    y: 0.7
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Origin:"
+  font: "larryfont"
+  id: "text_origin"
+  pivot: PIVOT_E
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 48.0
+  }
+  type: TYPE_TEMPLATE
+  id: "origin_web"
+  parent: "text_origin"
+  inherit_alpha: true
+  template: "/dirtylarry/radio_label.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "origin_web/larryradio"
+  parent: "origin_web"
+  template_node_child: true
+}
+nodes {
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Web\t"
+  id: "origin_web/larrylabel"
+  parent: "origin_web"
+  overridden_fields: 5
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 48.0
+    y: -96.0
+  }
+  type: TYPE_TEMPLATE
+  id: "origin_archive"
+  parent: "text_origin"
+  inherit_alpha: true
+  template: "/dirtylarry/radio_label.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "origin_archive/larryradio"
+  parent: "origin_archive"
+  template_node_child: true
+}
+nodes {
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Archive"
+  id: "origin_archive/larrylabel"
+  parent: "origin_archive"
+  overridden_fields: 5
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 777.0
+    y: 600.0
+  }
+  scale {
+    x: 0.7
+    y: 0.7
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Type"
+  font: "larryfont"
+  id: "text_type"
+  pivot: PIVOT_E
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 48.0
+  }
+  type: TYPE_TEMPLATE
+  id: "type_ogg"
+  parent: "text_type"
+  inherit_alpha: true
+  template: "/dirtylarry/radio_label.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "type_ogg/larryradio"
+  parent: "type_ogg"
+  template_node_child: true
+}
+nodes {
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Ogg"
+  id: "type_ogg/larrylabel"
+  parent: "type_ogg"
+  overridden_fields: 5
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 48.0
+    y: -96.0
+  }
+  type: TYPE_TEMPLATE
+  id: "type_wav"
+  parent: "text_type"
+  inherit_alpha: true
+  template: "/dirtylarry/radio_label.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "type_wav/larryradio"
+  parent: "type_wav"
+  template_node_child: true
+}
+nodes {
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Wav"
+  id: "type_wav/larrylabel"
+  parent: "type_wav"
+  overridden_fields: 5
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 463.0
+    y: 423.0
+  }
+  type: TYPE_TEMPLATE
+  id: "bn_play"
+  inherit_alpha: true
+  template: "/dirtylarry/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "bn_play/larrybutton"
+  parent: "bn_play"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Play"
+  id: "bn_play/larrylabel"
+  parent: "bn_play/larrybutton"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 799.0
+    y: 423.0
+  }
+  type: TYPE_TEMPLATE
+  id: "bn_stop"
+  inherit_alpha: true
+  template: "/dirtylarry/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "bn_stop/larrybutton"
+  parent: "bn_stop"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Stop"
+  id: "bn_stop/larrylabel"
+  parent: "bn_stop/larrybutton"
+  overridden_fields: 8
+  template_node_child: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

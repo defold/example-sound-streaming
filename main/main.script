@@ -1,0 +1,80 @@
+
+-- TODO: Find an online server with good content!
+-- local URL = "https://onlinetestcase.com/wp-content/uploads/2023/06"
+-- local URL = "https://github.com/JCash/defold-sound-stream/raw/refs/heads/main/web"
+-- local web_sounds = {}
+-- web_sounds["Ogg"] = "100-KB-OGG.ogg"
+-- web_sounds["Wav"] = "100-KB-WAV.wav"
+
+local URL = "http://localhost:8000"
+local web_sounds = {}
+web_sounds["Ogg"] = "mary-had-a-little-lamb-loop.ogg"
+web_sounds["Wav"] = "mary-had-a-little-lamb-loop.wav"
+
+local function load(self, source, type)
+	self.source = source
+	self.sound_type = type
+
+	self.proxy = nil
+	if self.source == "Web" then
+		self.proxy = "sounds#proxyWeb"
+	else
+		self.proxy = "sounds#proxy" .. self.sound_type
+	end
+
+	msg.post(self.proxy, "async_load")
+end
+
+function init(self)
+	msg.post("menu", "acquire_input_focus")
+	
+	msg.post("@render:", "use_fixed_fit_projection", { near = -1, far = 1 })
+
+	local source = sys.get_config_string('test.source', 'Archive')
+	local sound_type = sys.get_config_string('test.sound_type', 'Wav')
+
+	self.loaded = false
+	load(self, source, sound_type)
+	
+	--profiler.enable_ui(true)
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.pressed then
+		--print("Touch!")
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+
+		local start_message = {}
+		start_message.source = self.source
+		start_message.sound_type = self.sound_type
+
+		if self.source == 'Web' then
+			start_message.url = sys.get_config_string("web.url", URL)
+			local default_filename = web_sounds[self.sound_type]
+			start_message.filename = sys.get_config_string("web.filename", default_filename)
+		end
+
+		msg.post("sounds:/sounds#test", hash("start"), start_message)
+		
+	elseif message_id == hash("proxy_unloaded") then
+		self.loaded = false
+		self.proxy = nil
+
+	elseif message_id == hash("play") then
+		pprint("PLAY", self.loaded, message)
+		if self.loaded then
+			msg.post(self.proxy, "unload")
+		else
+			load(self, message.origin, message.type)
+		end
+		
+	elseif message_id == hash("stop") then		
+		msg.post(self.proxy, "unload")
+	end
+end

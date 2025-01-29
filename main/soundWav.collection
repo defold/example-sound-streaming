@@ -1,0 +1,18 @@
+name: "sounds"
+scale_along_z: 0
+embedded_instances {
+  id: "sounds"
+  data: "components {\n"
+  "  id: \"test\"\n"
+  "  component: \"/main/sound.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"music\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/sounds/mary-had-a-little-lamb-loop.wav\\\"\\n"
+  "looping: 1\\n"
+  "group: \\\"music\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
