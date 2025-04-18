@@ -69,7 +69,7 @@ nodes {
 nodes {
   position {
     x: 396.0
-    y: 600.0
+    y: 621.0
   }
   scale {
     x: 0.7
@@ -94,6 +94,7 @@ nodes {
 nodes {
   position {
     x: 48.0
+    y: 20.0
   }
   type: TYPE_TEMPLATE
   id: "origin_web"
@@ -124,7 +125,7 @@ nodes {
 nodes {
   position {
     x: 48.0
-    y: -96.0
+    y: -66.0
   }
   type: TYPE_TEMPLATE
   id: "origin_archive"
@@ -155,7 +156,7 @@ nodes {
 nodes {
   position {
     x: 777.0
-    y: 600.0
+    y: 621.0
   }
   scale {
     x: 0.7
@@ -180,6 +181,7 @@ nodes {
 nodes {
   position {
     x: 48.0
+    y: 20.0
   }
   type: TYPE_TEMPLATE
   id: "type_ogg"
@@ -210,7 +212,7 @@ nodes {
 nodes {
   position {
     x: 48.0
-    y: -96.0
+    y: -66.0
   }
   type: TYPE_TEMPLATE
   id: "type_wav"
@@ -234,6 +236,37 @@ nodes {
   text: "Wav"
   id: "type_wav/larrylabel"
   parent: "type_wav"
+  overridden_fields: 5
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 48.0
+    y: -152.0
+  }
+  type: TYPE_TEMPLATE
+  id: "type_opus"
+  parent: "text_type"
+  inherit_alpha: true
+  template: "/dirtylarry/radio_label.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "type_opus/larryradio"
+  parent: "type_opus"
+  template_node_child: true
+}
+nodes {
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Opus"
+  id: "type_opus/larrylabel"
+  parent: "type_opus"
   overridden_fields: 5
   overridden_fields: 8
   template_node_child: true
@@ -285,6 +318,31 @@ nodes {
   parent: "bn_stop/larrybutton"
   overridden_fields: 8
   template_node_child: true
+}
+nodes {
+  position {
+    x: 1262.0
+    y: 63.0
+  }
+  scale {
+    x: 0.7
+    y: 0.7
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.2
+    y: 0.102
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Origin:"
+  font: "larryfont"
+  id: "info"
+  pivot: PIVOT_E
+  inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

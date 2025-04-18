@@ -46,6 +46,12 @@ embedded_instances {
   "  data: \"collection: \\\"/main/soundWeb.collection\\\"\\n"
   "\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"proxyOpus\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/main/soundOpus.collection\\\"\\n"
+  "\"\n"
+  "}\n"
   ""
 }
 embedded_instances {

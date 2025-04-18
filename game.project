@@ -36,6 +36,7 @@ scale_mode = stretch
 
 [sound]
 stream_enabled = 1
+stream_cache_size = 131072
 stream_preload_size = 16384
 
 [liveupdate]
