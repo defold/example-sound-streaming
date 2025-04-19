@@ -1,5 +1,7 @@
 # Sound streaming example
 
+Also see [Sound Streaming Manual](https://defold.com/manuals/sound-streaming/)
+
 This example shows how to stream sounds from either the archive (the base game bundle) or the web.
 
 For supporting loading from the web, start a web server where the files uner the [web](./web) folder is available.
