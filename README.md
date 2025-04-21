@@ -1,14 +1,25 @@
 # Sound streaming example
 
+Also see [Sound Streaming Manual](https://defold.com/manuals/sound-streaming/)
+
 This example shows how to stream sounds from either the archive (the base game bundle) or the web.
 
 For supporting loading from the web, start a web server where the files uner the [web](./web) folder is available.
 
 E.g. starting a local server:
+Note: For full features, the serer should support:
+* Ranged requests (i.e. returning 206)
+* ETag (i.e. returning 304)
 
-  $ (cd sounds && python -m RangeHTTPServer)
+macOS - install:
 
-You can of course also change the url in main.script, to somethin of your choosing (defaults to http://localhost:8000)
+  $ brew install http-server
+
+macOS - run:
+
+  $ (cd sounds && http-server -p 8000)
+
+You can of course also change the url in main.script, to something of your choosing (defaults to http://localhost:8000)
 
 
 ![](./hero.png)

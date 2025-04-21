@@ -2,9 +2,11 @@
 -- TODO: Find an online server with good content!
 
 local URL = "http://localhost:8000"
+--local URL = "http://127.0.0.1:8000"
 local web_sounds = {}
 web_sounds["Ogg"] = "mary-had-a-little-lamb-loop.ogg"
 web_sounds["Wav"] = "mary-had-a-little-lamb-loop.wav"
+web_sounds["Opus"] = "mary-had-a-little-lamb-loop.opus"
 
 local function load(self, source, type)
 	self.source = source
@@ -27,6 +29,16 @@ function init(self)
 
 	local source = sys.get_config_string('test.source', 'Archive')
 	local sound_type = sys.get_config_string('test.sound_type', 'Wav')
+
+	if not (source == 'Archive' or source == 'Web') then
+		print("Invalid source type:", source)
+		source = 'Archive'
+	end
+
+	if not (sound_type == 'Ogg' or sound_type == 'Wav' or sound_type == 'Opus') then
+		print("Invalid sound type:", sound_type)
+		sound_type = 'Ogg'
+	end
 
 	self.loaded = false
 	load(self, source, sound_type)
