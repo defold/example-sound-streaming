@@ -1,0 +1,127 @@
+platforms:
+  armv7-ios:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      frameworks: []
+      linkFlags: []
+  arm64-ios:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      frameworks: []
+      linkFlags: []
+  x86_64-ios:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      frameworks: []
+      linkFlags: []
+  armv7-android:
+    context:
+      excludeLibs: []
+      excludeJars: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+      jetifier: true
+  arm64-android:
+    context:
+      excludeLibs: []
+      excludeJars: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+      jetifier: true
+  arm64-osx:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      frameworks: []
+      linkFlags: []
+  x86_64-osx:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      frameworks: []
+      linkFlags: []
+  x86_64-linux:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+  arm64-linux:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+  x86-win32:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [libdecoder_opus.lib, libopus.lib]
+      linkFlags: []
+  x86_64-win32:
+    context:
+      excludeLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [libdecoder_opus.lib, libopus.lib]
+      linkFlags: []
+  js-web:
+    context:
+      excludeLibs: []
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+  wasm-web:
+    context:
+      excludeLibs: []
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+  x86_64-ps4:
+    context:
+      excludeLibs: []
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+  x86_64-ps5:
+    context:
+      excludeLibs: []
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
+  arm64-nx64:
+    context:
+      excludeLibs: []
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [decoder_opus, opus]
+      linkFlags: []
