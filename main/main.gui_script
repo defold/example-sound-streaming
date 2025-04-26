@@ -4,17 +4,17 @@ function init(self)
 	self.selected_origin = 'Archive'
 	self.selected_type = 'Ogg'
 
-	local n = gui.get_node("info")
-	local text = ''
+	-- local n = gui.get_node("info")
+	-- local text = ''
 
-	local info = sys.get_sys_info()
-	if info.system_name == 'HTML5' then
-		pprint(sys.get_sys_info())
-		text = html5.run('var simd = WebAssembly.validate(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 10, 9, 1, 7, 0, 65, 0, 253, 4, 26, 11])); await simd();')
-		print("MAWE: result:", text)
-	end
+	-- local info = sys.get_sys_info()
+	-- if info.system_name == 'HTML5' then
+	-- 	pprint(sys.get_sys_info())
+	-- 	text = html5.run('var simd = WebAssembly.validate(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 10, 9, 1, 7, 0, 65, 0, 253, 4, 26, 11])); await simd();')
+	-- 	print("MAWE: result:", text)
+	-- end
 
-	gui.set_text(n, string.format("Info: '%s'", text))
+	-- gui.set_text(n, string.format("Info: '%s'", text))
 end
 
 function final(self)
